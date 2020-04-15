@@ -23,4 +23,4 @@ A consumer will reach their fitness goals quicker when they track their workout 
 * mongoose 
 * morgan 
 
-![picture alt](demo.JPG "Title is optional")
+<img src="demo.jpg">
