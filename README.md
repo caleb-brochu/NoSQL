@@ -23,4 +23,4 @@ A consumer will reach their fitness goals quicker when they track their workout 
 * mongoose 
 * morgan 
 
-<img src="/demo.jpg">
+<img src="./demo.jpg">
