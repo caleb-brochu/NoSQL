@@ -18,7 +18,7 @@ const databaseUrl = "workout";
 const collections = ["workouts"];
 const db = mongojs(databaseUrl, collections);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout" ||"mongodb://heroku_pm6s9fnp:9ar8hhk7t25rof50m5rr307ufm@ds149820.mlab.com:49820/heroku_pm6s9fnp",{
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://user:password1@ds249565.mlab.com:49565/heroku_qpq19117',{
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
