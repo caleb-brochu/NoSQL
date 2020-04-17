@@ -14,11 +14,8 @@ app.use(express.static("public"));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
-const databaseUrl = "workout";
-const collections = ["workouts"];
-const db = mongojs(databaseUrl, collections);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://admin:password@ds249565.mlab.com:49565/heroku_rmtklxx6",{
+mongoose.connect(process.env.MONGODB_URI || "mongodb://admin:password1@ds249565.mlab.com:49565/heroku_rmtklxx6",{
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
