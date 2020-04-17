@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const logger = require("morgan");
 const mongojs = require("mongojs")
-const Workout = require("./models/workout.js");
+const Workout = require("./models/workout");
 const app = express();
 
 const PORT = process.env.PORT || 8000;
@@ -15,9 +15,11 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://admin:password1@ds249565.mlab.com:49565/heroku_rmtklxx6",{
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+
+//"mongodb://admin:password@ds249565.mlab.com:49565/heroku_rmtklxx6"
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout",{
+  useNewUrlParser: true 
 });
 
 //require("./routes/apiRoutes.js")(app);
@@ -57,7 +59,7 @@ app.put("/api/workouts/:id", (req, res) =>{
         console.log(data)
         addExercise.push(req.body);
         
-        db.workouts.updateOne(
+        Workout.updateOne(
             {
                 _id: mongojs.ObjectId(req.params.id)
             },
