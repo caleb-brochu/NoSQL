@@ -40,7 +40,7 @@ app.post("/api/workouts", (req , res) => {
 
 // Get All
   app.get("/api/workouts", (req, res) =>{
-      db.workouts.find({} , (err, data) =>{
+      Workout.find({} , (err, data) =>{
         if (err) {
             res.send(err)
         }
@@ -51,7 +51,7 @@ app.post("/api/workouts", (req , res) => {
 
 app.put("/api/workouts/:id", (req, res) =>{
     console.log(req.params.id)
-    db.workouts.findOne({
+    Workout.findOne({
         _id: mongojs.ObjectId(req.params.id)
         
     }, (err, data) => {
@@ -78,7 +78,7 @@ app.put("/api/workouts/:id", (req, res) =>{
   
 
   app.get("/api/workouts/range", (req, res) => {
-    db.workouts.find({}, (err, data) => {
+    Workout.find({}, (err, data) => {
       if (err) {
         res.send(err);
       } else {
